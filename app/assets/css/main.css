@@ -10,8 +10,10 @@
   --color-hijau: #2f8f5b;
   --color-pink: #f08aa6;
   --color-muted: #6d6357;
-  --font-display: "Arial Black", "Arial Narrow", system-ui, sans-serif;
-  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Archivo", "Arial Black", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 :root {
@@ -19,6 +21,8 @@
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -60,9 +64,10 @@ body {
 
 @utility poster-title {
   font-family: var(--font-display);
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.045em;
-  line-height: 0.92;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 @utility ticket-cut {
