@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fff6e5;
+  --color-paper-deep: #f6e8c8;
+  --color-ink: #1c1a17;
+  --color-merah: #e8442e;
+  --color-kuning: #ffc93c;
+  --color-biru: #2e5aa8;
+  --color-hijau: #2f8f5b;
+  --color-pink: #f08aa6;
+  --color-muted: #6d6357;
+  --font-display: "Arial Black", "Arial Narrow", system-ui, sans-serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(255, 201, 60, 0.14) 0%, transparent 32%),
+    radial-gradient(circle at 88% 24%, rgba(240, 138, 166, 0.12) 0%, transparent 28%),
+    radial-gradient(circle at 18% 72%, rgba(46, 90, 168, 0.08) 0%, transparent 30%),
+    radial-gradient(#e4d5b4 0.85px, transparent 0.85px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 18px 18px;
+}
+
+::selection {
+  background: var(--color-kuning);
+  color: var(--color-ink);
+}
+
+@utility ink-border {
+  border: 2px solid var(--color-ink);
+}
+
+@utility ink-shadow {
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+@utility ink-shadow-sm {
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+@utility ink-shadow-lg {
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+
+@utility poster-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+@utility ticket-cut {
+  background-image: radial-gradient(circle at 0 50%, transparent 9px, var(--color-paper) 10px),
+    radial-gradient(circle at 100% 50%, transparent 9px, var(--color-paper) 10px);
+}
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes sticker-wiggle {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-4px); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0) rotate(12deg); }
+  50% { transform: translateY(9px) rotate(6deg); }
+}
+
+@keyframes drift-x {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(12px) translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bob-badge {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(-0.5deg) translateY(-3px); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 28s linear infinite;
+}
+
+.sticker-wiggle {
+  animation: sticker-wiggle 3.4s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: float-slow 6.5s ease-in-out infinite;
+}
+
+.float-reverse {
+  animation: float-reverse 7.5s ease-in-out infinite;
+}
+
+.drift-x {
+  animation: drift-x 8.5s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+.bob-badge {
+  animation: bob-badge 4.2s ease-in-out infinite;
+}
+
+.pop-in {
+  animation: pop-in 0.22s ease-out both;
+}
+
+.pressable {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.pressable:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+.pressable:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.halftone {
+  background-image: radial-gradient(var(--color-ink) 1.4px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
