@@ -76,43 +76,95 @@ body {
 }
 
 @keyframes marquee-slide {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes sticker-wiggle {
-  0%, 100% { transform: rotate(-6deg) translateY(0); }
-  50% { transform: rotate(-3deg) translateY(-4px); }
+
+  0%,
+  100% {
+    transform: rotate(-6deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-3deg) translateY(-4px);
+  }
 }
 
 @keyframes pop-in {
-  from { opacity: 0; transform: translateY(10px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(3deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
 }
 
 @keyframes float-reverse {
-  0%, 100% { transform: translateY(0) rotate(12deg); }
-  50% { transform: translateY(9px) rotate(6deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+
+  50% {
+    transform: translateY(9px) rotate(6deg);
+  }
 }
 
 @keyframes drift-x {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(12px) translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(12px) translateY(-6px);
+  }
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes bob-badge {
-  0%, 100% { transform: rotate(-2deg) translateY(0); }
-  50% { transform: rotate(-0.5deg) translateY(-3px); }
+
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-0.5deg) translateY(-3px);
+  }
 }
 
 .marquee-track {
@@ -169,7 +221,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
